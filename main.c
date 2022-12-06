@@ -18,6 +18,15 @@ Nodo* create(int valor){
 	return n;
 }
 
+void imprimir(Nodo *n)
+{
+	if(n==NULL){
+		return;
+	}
+	printf("%d\n", n->value);
+	imprimir(n->esq);
+	imprimir(n->dir);
+}
 int main() {
 
 	Nodo *nodo5 = create(5);
@@ -30,6 +39,8 @@ int main() {
 	nodo2->esq=nodo1;
 	nodo5->dir = nodo8;
 	nodo2->dir=nodo4;
+
+	imprimir(nodo5);
 	
   return 0;
 }
